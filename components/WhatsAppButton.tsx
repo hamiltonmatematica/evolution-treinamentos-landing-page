@@ -19,7 +19,7 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ text, fullWidth 
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center gap-2 px-6 py-4 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] active:scale-95 ${fullWidth ? 'w-full' : ''}`}
+      className={`inline-flex items-center justify-center gap-2 px-6 py-4 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] active:scale-95 animate-whatsapp-pulse ${fullWidth ? 'w-full' : ''}`}
     >
       <Smartphone className="w-5 h-5" />
       {text}

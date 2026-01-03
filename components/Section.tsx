@@ -9,9 +9,11 @@ interface SectionProps {
 
 export const Section: React.FC<SectionProps> = ({ children, className = "", id }) => {
   return (
-    <section id={id} className={`py-12 px-6 md:py-20 md:px-12 ${className}`}>
-      <div className="max-w-4xl mx-auto">
-        {children}
+    <section id={id} className={`${className}`}>
+      <div className="py-12 md:py-20">
+        <div className="max-w-4xl mx-auto px-6 md:px-12">
+          {children}
+        </div>
       </div>
     </section>
   );

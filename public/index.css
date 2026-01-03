@@ -1,0 +1,33 @@
+/* Reset para garantir que os backgrounds vão até as bordas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+#root {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+/* Garantir que sections ocupem 100% da largura */
+section {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Logos decorativos sempre atrás do conteúdo */
+.logo-decoration {
+    z-index: 0 !important;
+    pointer-events: none;
+}
