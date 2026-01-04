@@ -38,7 +38,9 @@
             box-sizing: border-box;
         }
 
-        html, body, #root {
+        html,
+        body,
+        #root {
             margin: 0;
             padding: 0;
             width: 100%;
@@ -56,8 +58,18 @@
 
         .text-gold {
             background: linear-gradient(135deg, #d4af37 0%, #f1d592 50%, #b8860b 100%);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        .text-gold-solid {
+            color: #d4af37 !important;
+        }
+
+        .fill-gold {
+            fill: #d4af37 !important;
+            color: #d4af37 !important;
         }
 
         .bg-evolution-green {

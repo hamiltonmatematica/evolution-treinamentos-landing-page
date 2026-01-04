@@ -1,5 +1,6 @@
 
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import {
   BarChart,
   FileSpreadsheet,
@@ -36,6 +37,33 @@ import {
 const App: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
+  // Scroll reveal will be handled via CSS and a single intersection observer
+
+  useEffect(() => {
+    // Single observer for all animated elements
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
+
+    // Observe all elements with scroll-reveal class
+    const elements = document.querySelectorAll('.scroll-reveal');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
@@ -45,7 +73,7 @@ const App: React.FC = () => {
 
       {/* HERO SECTION */}
       <Section className="bg-evolution-green border-b border-white/10 pt-24">
-        <div className="text-center">
+        <div className="text-center scroll-reveal">
           <div className="inline-block mb-8 rounded-full border border-gold/30 overflow-hidden bg-evolution-green">
             <img
               src="/logo.png?v=3"
@@ -113,7 +141,7 @@ const App: React.FC = () => {
           <img src="/bi.png" alt="Power BI" className="w-32 h-32 object-contain" />
         </div>
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-gold/10 rounded-full blur-3xl"></div>
-        <div className="relative z-10">
+        <div className="relative z-10 scroll-reveal">
           <div className="flex items-center gap-3 mb-6">
             <Award className="w-8 h-8 text-[#d4af37]" />
             <h2 className="text-2xl md:text-3xl font-bold">Formação Analista de Dados – Excel & Power BI</h2>
@@ -152,7 +180,7 @@ const App: React.FC = () => {
 
       {/* PROVA SOCIAL - 1000+ ALUNOS */}
       <Section className="py-8 bg-white/5">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 scroll-reveal">
           {/* 1000+ Alunos */}
           <div className="flex items-center gap-4">
             <div className="bg-gold/10 p-4 rounded-full">
@@ -181,7 +209,7 @@ const App: React.FC = () => {
 
       {/* CAMADA 3: O QUE VOCÊ VAI APRENDER */}
       <Section id="conteudo" className="relative overflow-hidden">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 scroll-reveal">
           <div className="inline-block relative">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">O Que Você Vai Aprender</h2>
             <div className="absolute -top-2 -right-2 w-8 h-8 bg-gold/30 rounded-full animate-ping"></div>
@@ -351,7 +379,7 @@ const App: React.FC = () => {
             <img src="/bi.png" alt="Power BI" className="w-44 h-44 object-contain" />
           </div>
           <div className="relative z-10">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 scroll-reveal">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Para quem é</h2>
               <div className="w-20 h-1 bg-gold mx-auto rounded-full"></div>
             </div>
@@ -440,7 +468,7 @@ const App: React.FC = () => {
           <div className="absolute bottom-10 right-5 animate-float opacity-5 z-0 hidden lg:block">
             <img src="/bi.png" alt="Power BI" className="w-44 h-44 object-contain" />
           </div>
-          <div className="flex flex-col md:flex-row gap-12 items-center">
+          <div className="flex flex-col md:flex-row gap-12 items-center scroll-reveal">
             <div className="md:w-1/2">
               <div className="flex items-center gap-3 mb-6">
                 <Building2 className="w-8 h-8 text-gold" />
@@ -478,12 +506,12 @@ const App: React.FC = () => {
             <h2 className="text-3xl font-bold mb-4">Quem Somos</h2>
             <div className="w-12 h-1 bg-gold mx-auto mb-10 rounded-full"></div>
           </div>
-          <div className="bg-white/5 p-8 rounded-3xl border border-white/10 flex flex-col items-center">
+          <div className="bg-white/5 p-8 rounded-3xl border border-white/10 flex flex-col items-center scroll-reveal">
             <p className="text-lg text-gray-300 font-light leading-relaxed text-center mb-8 italic">
               "A Evolution Treinamentos é especializada em formações práticas em Excel, Power BI e Análise de Dados, com foco total em aplicação real no mercado. Nossos treinamentos são conduzidos por profissionais que atuam diretamente com dados, BI e automação, conectando teoria com desafios reais enfrentados por empresas e profissionais."
             </p>
             <div className="flex items-center gap-4">
-              <Users className="w-12 h-12 text-gold p-2 bg-gold/10 rounded-full" />
+              <img src="/logo.png" alt="Evolution Logo" className="w-12 h-12 rounded-full object-cover border-2 border-gold/30" />
               <div className="text-left">
                 <span className="block font-bold text-gold">Evolution Treinamentos</span>
                 <span className="block text-sm text-gray-400">Consultoria e Educação Corporativa</span>
@@ -576,7 +604,7 @@ const App: React.FC = () => {
         <div className="absolute bottom-10 right-5 animate-float-slower opacity-5 z-0 hidden xl:block">
           <img src="/excel.png" alt="Excel" className="w-32 h-32 object-contain" />
         </div>
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 scroll-reveal">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Outros Cursos</h2>
           <p className="text-gray-300 font-light max-w-2xl mx-auto">
             Nem todo aluno quer começar pela Formação completa — por isso, também oferecemos cursos avulsos para você evoluir no seu ritmo e conforme sua necessidade.
