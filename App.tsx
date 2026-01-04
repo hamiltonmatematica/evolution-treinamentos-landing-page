@@ -74,13 +74,11 @@ const App: React.FC = () => {
       {/* HERO SECTION */}
       <Section className="bg-evolution-green border-b border-white/10 pt-24">
         <div className="text-center scroll-reveal">
-          <div className="inline-block mb-8 rounded-full border border-gold/30 overflow-hidden bg-evolution-green">
-            <img
-              src="/logo.png?v=3"
-              alt="Evolution Logo"
-              className="w-32 h-32 object-cover scale-110"
-            />
-          </div>
+          <img
+            src="/logo2.png?v=3"
+            alt="Evolution Logo"
+            className="w-32 h-32 rounded-full object-cover mb-8 mx-auto"
+          />
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
             Torne-se <span className="gradient-text">Analista de Dados</span> com Excel e Power BI
           </h1>
@@ -511,7 +509,7 @@ const App: React.FC = () => {
               "A Evolution Treinamentos é especializada em formações práticas em Excel, Power BI e Análise de Dados, com foco total em aplicação real no mercado. Nossos treinamentos são conduzidos por profissionais que atuam diretamente com dados, BI e automação, conectando teoria com desafios reais enfrentados por empresas e profissionais."
             </p>
             <div className="flex items-center gap-4">
-              <img src="/logo.png" alt="Evolution Logo" className="w-12 h-12 rounded-full object-cover border-2 border-gold/30" />
+              <img src="/logo2.png" alt="Evolution Logo" className="w-12 h-12 rounded-full object-cover border-2 border-gold/30" />
               <div className="text-left">
                 <span className="block font-bold text-gold">Evolution Treinamentos</span>
                 <span className="block text-sm text-gray-400">Consultoria e Educação Corporativa</span>
@@ -660,7 +658,7 @@ const App: React.FC = () => {
       {/* FOOTER */}
       <footer className="py-12 border-t border-white/10 text-center text-gray-500 text-sm">
         <div className="flex items-center justify-center gap-3 mb-2">
-          <img src="/logo.png" alt="Evolution Logo" className="w-8 h-8 rounded-full object-cover" />
+          <img src="/logo2.png" alt="Evolution Logo" className="w-8 h-8 rounded-full object-cover" />
           <span className="text-white font-semibold">Evolution Treinamentos</span>
         </div>
         <p>&copy; Evolution Treinamentos e Consultoria. Todos os direitos reservados.</p>
