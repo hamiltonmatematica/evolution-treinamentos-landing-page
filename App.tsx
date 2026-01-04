@@ -675,7 +675,7 @@ const App: React.FC = () => {
           rel="noopener noreferrer"
           className="bg-green-600 hover:bg-green-500 p-4 rounded-full shadow-2xl flex items-center justify-center text-white hover:scale-110 transition-all"
         >
-          <MessageCircle className="w-6 h-6" />
+          <img src="/whatsapp-svgrepo-com.svg" alt="WhatsApp" className="w-8 h-8" />
         </a>
       </div>
     </div>
