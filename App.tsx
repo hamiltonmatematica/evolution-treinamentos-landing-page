@@ -670,7 +670,7 @@ const App: React.FC = () => {
       {/* STICKY WHATSAPP (All Devices) */}
       <div className="fixed bottom-4 right-4 z-50">
         <a
-          href="https://wa.me/557193446927?text=Olá%2C%20visitei%20sua%20p%C3%A1gina%20e%20gostaria%20de%20mais%20detalhes%20sobre%20suas%20forma%C3%A7%C3%B5es"
+          href="https://wa.me/557199204057?text=Olá%2C%20visitei%20sua%20p%C3%A1gina%20e%20gostaria%20de%20mais%20detalhes%20sobre%20suas%20forma%C3%A7%C3%B5es"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-green-600 hover:bg-green-500 p-4 rounded-full shadow-2xl flex items-center justify-center text-white hover:scale-110 transition-all"

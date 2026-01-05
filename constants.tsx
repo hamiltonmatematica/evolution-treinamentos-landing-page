@@ -14,7 +14,7 @@ import {
   ChevronDown
 } from 'lucide-react';
 
-export const WHATSAPP_LINK = "https://wa.me/557193446927?text=Olá! Gostaria de saber mais sobre a Formação Analista de Dados.";
+export const WHATSAPP_LINK = "https://wa.me/557199204057?text=Olá! Gostaria de saber mais sobre a Formação Analista de Dados.";
 
 export const EXCEL_MODULES: Module[] = [
   { id: 1, title: "Excel Essencial – Ferramentas Básicas", description: "Introdução ao Excel, organização de planilhas, formatação, filtros e produtividade." },

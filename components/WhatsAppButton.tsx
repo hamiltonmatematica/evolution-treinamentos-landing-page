@@ -10,7 +10,7 @@ interface WhatsAppButtonProps {
 
 export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ text, fullWidth = false, customMessage }) => {
   const whatsappUrl = customMessage
-    ? `https://wa.me/557193446927?text=${encodeURIComponent(customMessage)}`
+    ? `https://wa.me/557199204057?text=${encodeURIComponent(customMessage)}`
     : WHATSAPP_LINK;
 
   return (
